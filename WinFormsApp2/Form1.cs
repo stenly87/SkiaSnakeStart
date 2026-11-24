@@ -27,7 +27,7 @@ public partial class Form1 : Form
         {
             if (start)
             {
-                paint.DrawCircle(cell.X, cell.Y, 10, pen);
+                paint.DrawCircle(cell.X+5, cell.Y+5, 5, pen);
                 start = false;
             }
             else
@@ -114,27 +114,28 @@ public class Snake
     public void Move(Direction nextDirection)
     {
         for (int i = SnakeCells.Count - 1; i > 0; i--)
+        {
             SnakeCells[i].Direction = SnakeCells[i - 1].Direction;
+            SnakeCells[i].X = SnakeCells[i - 1].X;
+            SnakeCells[i].Y = SnakeCells[i - 1].Y;
+        }
 
         SnakeCells[0].Direction = nextDirection;
 
-        foreach (var cell in SnakeCells)
+        switch (SnakeCells[0].Direction)
         {
-            switch (cell.Direction)
-            {
-                case Direction.Up:
-                    cell.Y -= 10;
-                    break;
-                case Direction.Down:
-                    cell.Y += 10;
-                    break;
-                case Direction.Left:
-                    cell.X -= 10;
-                    break;
-                case Direction.Right:
-                    cell.X += 10;
-                    break;
-            }
+            case Direction.Up:
+                SnakeCells[0].Y -= 10;
+                break;
+            case Direction.Down:
+                SnakeCells[0].Y += 10;
+                break;
+            case Direction.Left:
+                SnakeCells[0].X -= 10;
+                break;
+            case Direction.Right:
+                SnakeCells[0].X += 10;
+                break;
         }
     }
 }
