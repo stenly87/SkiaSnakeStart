@@ -43,11 +43,11 @@ public class GameGraphic
         {
             switch (cell.Alive)
             {
-                case 5: pen.Color = SKColors.DarkOliveGreen; break;
-                case 4: pen.Color = new SKColor(85, 107, 67, 255); break;
-                case 3: pen.Color = new SKColor(85, 107, 87, 255); break;
-                case 2: pen.Color = new SKColor(85, 107, 107, 255); break;
-                default: pen.Color = new SKColor(85, 107, 127, 255); break;
+                case 5: pen.Color = new SKColor(133, 181, 89, 255); break;
+                case 4: pen.Color = new SKColor(119, 158, 85, 255); break;
+                case 3: pen.Color = new SKColor(99, 125, 74, 255); break;
+                case 2: pen.Color = new SKColor(84, 102, 65, 255); break;
+                default: pen.Color = new SKColor(65, 77, 54, 255); break;
             }
             paint.DrawRect(cell.X, cell.Y, _game.SnakeSize, _game.SnakeSize, pen);
         }
