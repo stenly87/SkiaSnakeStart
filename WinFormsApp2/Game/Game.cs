@@ -66,6 +66,8 @@ public class Game
 
     private void JunkRotten()
     {
+        if (_random.Next(0, 100) < 80)
+            return;
         for (int i = 0; i < _junk.Count; i++)
             _junk[i].Rotten();
     }
